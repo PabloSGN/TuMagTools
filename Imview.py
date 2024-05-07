@@ -64,10 +64,17 @@ if __name__ == "__main__":
     # Read the image
     I, H = read_Tumag(Image)
 
-    # Statistics positions - DEFAULT
-    x_stats   = int(H['Roi_x_size'] / 2)
-    y_stats   = int(H['Roi_y_size'] / 2)
-    rad = int(H['Roi_x_size'] / 5)
+    if H["Thumbnail"]:
+        width = H['Roi_x_size'] // H["Thumbnail_binning"]
+        height = H['Roi_y_size'] // H["Thumbnail_binning"]
+        x_stats   = int(width / 2)
+        y_stats   = int(height / 2)
+        rad = int(width / 5)
+    else:
+        # Statistics positions - DEFAULT
+        x_stats   = int(H['Roi_x_size'] / 2)
+        y_stats   = int(H['Roi_y_size'] / 2)
+        rad = int(H['Roi_x_size'] / 5)
 
     # Read command line arguments
     params = [x_stats, y_stats,  rad]       

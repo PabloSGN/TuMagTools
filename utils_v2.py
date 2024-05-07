@@ -155,7 +155,6 @@ def GetDatafromHeader(receivedHeader):
             'Roi_x_offset', 'Roi_x_size', 'Roi_y_offset', 'Roi_y_size', 'ImageType', 'Observation_Counter',
             'FW1', 'FW2', 'EtalonDN', 'EtalonSign', 'Rocli1_LCVR', 'Rocli2_LCVR', 'EtalonVoltsReading',
             'FW1_Real', 'FW2_Real', 'LCVR1_DN_Real', 'LCVR2_DN_Real']
-        
 
     # Reading size of Headers from file
     positionStartSstLength = nBytesMpsHeader
@@ -230,7 +229,6 @@ def GetDatafromHeader(receivedHeader):
         Header[key] = dataLine[ind]
 
     return Header
-
 
 def read_Tumag(file, write_fits = False, fits_file_name = 'Image.fits', 
                plot_flag = False, vmin = 0, vmax = 4096, onlyheader = False):
@@ -357,6 +355,7 @@ def read_Tumag(file, write_fits = False, fits_file_name = 'Image.fits',
             if H['ImageType'] == 0:
                 ImageFlag = True
                 width, height = H['Roi_x_size'], H['Roi_y_size']
+                H["Thumbnail"] = False
             
             elif H['ImageType'] == 10:
                 
@@ -366,9 +365,11 @@ def read_Tumag(file, write_fits = False, fits_file_name = 'Image.fits',
             else:
                 
                 ImageFlag = True
-                
+                H["Thumbnail"] = True
+
                 Binning = Thumb_type_6[H['ImageType']]['bin'] # Get the binning
-                
+                H["Thumbnail_binning"] = Binning
+
                 # Real width and height
                 width = H['Roi_x_size'] // Binning
                 height = H['Roi_y_size'] // Binning
@@ -418,8 +419,4 @@ def read_Tumag(file, write_fits = False, fits_file_name = 'Image.fits',
                 plt.show()
         
             return Image, H
-
-
-
-
 
