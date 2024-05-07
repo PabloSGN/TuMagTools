@@ -22,3 +22,5 @@ Description of the tools developed for the commisioning phase of TuMAG:
 	- Photon_flux.py : Module used to visualize the mean value per accumulation of a series of images as a function of the exposure time.
 
 	- focus_finder.py : Module developed to find the best focus, by fitting a parabola to the contrast values of a series of images of a through focus procedure.
+
+    - ObsCount_finder : Module to find and move all images corresponding to a specific observation Counter into another folder.  
