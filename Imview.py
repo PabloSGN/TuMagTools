@@ -24,7 +24,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider
 # Own libs
-from utils_v2 import read_Tumag
+from utils import read_Tumag
  
 # ============================= CONFIG ====================================== #
 
@@ -53,7 +53,6 @@ def parser(args, params):
     params = [xc1, yc1, rad]
          
     return params
-
 
 if __name__ == "__main__":
         
