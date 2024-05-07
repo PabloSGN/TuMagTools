@@ -114,9 +114,15 @@ if __name__ == "__main__":
         global cbar
         cbar.remove()       
         cbar_min = val
+        ax.clear() # To help with memory
         im = ax.imshow(I, cmap = 'gray', vmin = cbar_min, vmax =cbar_max )
         cbar = plt.colorbar(im, ax = ax)
         cbar_ticks = np.linspace(cbar_min, cbar_max, num=8, endpoint=True)
+        # Statistics Square
+        ax.plot([x_stats - rad, x_stats - rad], [y_stats - rad, y_stats + rad], ls = '--', c = 'crimson', alpha = 0.4)
+        ax.plot([x_stats + rad, x_stats + rad], [y_stats - rad, y_stats + rad], ls = '--', c = 'crimson', alpha = 0.4)
+        ax.plot([x_stats - rad, x_stats + rad], [y_stats - rad, y_stats - rad], ls = '--', c = 'crimson', alpha = 0.4)
+        ax.plot([x_stats - rad, x_stats + rad], [y_stats + rad, y_stats + rad],  ls = '--', c = 'crimson', alpha = 0.4)
         cbar.set_ticks(cbar_ticks) 
         cbar.draw_all() 
         plt.draw()
@@ -127,9 +133,15 @@ if __name__ == "__main__":
         global cbar
         cbar.remove()
         cbar_max = val
+        ax.clear() # To help with memory
         im = ax.imshow(I, cmap = 'gray', vmin = cbar_min, vmax =cbar_max )
         cbar = plt.colorbar(im, ax = ax)
         cbar_ticks = np.linspace(cbar_min, cbar_max, num=8, endpoint=True)
+        # Statistics Square
+        ax.plot([x_stats - rad, x_stats - rad], [y_stats - rad, y_stats + rad], ls = '--', c = 'crimson', alpha = 0.4)
+        ax.plot([x_stats + rad, x_stats + rad], [y_stats - rad, y_stats + rad], ls = '--', c = 'crimson', alpha = 0.4)
+        ax.plot([x_stats - rad, x_stats + rad], [y_stats - rad, y_stats - rad], ls = '--', c = 'crimson', alpha = 0.4)
+        ax.plot([x_stats - rad, x_stats + rad], [y_stats + rad, y_stats + rad],  ls = '--', c = 'crimson', alpha = 0.4)
         cbar.set_ticks(cbar_ticks) 
         cbar.draw_all() 
         plt.draw()
