@@ -8,6 +8,7 @@ The following modules need to be installed in the python distribution:
  - sys
  - glob
  - scipy
+ - shutil
 
 All tools can be run via terminal command. More info about the required arguments for each function at the start of each file. 
 
@@ -23,4 +24,4 @@ Description of the tools developed for the commisioning phase of TuMAG:
 
 	- focus_finder.py : Module developed to find the best focus, by fitting a parabola to the contrast values of a series of images of a through focus procedure.
 
-    - ObsCount_finder : Module to find and move all images corresponding to a specific observation Counter into another folder.  
+	 - ObsCount_finder : Module to find and move all images corresponding to a specific observation Counter into another folder.  

@@ -22,6 +22,7 @@ import os
 import sys
 import glob
 import numpy as np
+import shutil
 
 # Own libs
 from utils import read_Tumag
@@ -70,15 +71,15 @@ def obscount_finder(Folder, ObsCount, NewFolder):
 
     else:
         print(f"Found : {len(obscount_images)} images for Observation Counter {ObsCount}")
-        print(f"Moving files into {NewFolder}...")
+        print(f"Copying files into {NewFolder}...")
         if not os.path.isdir(NewFolder):
             os.mkdir(NewFolder)
         
         count = 0
         for img in obscount_images:
-            os.rename(img, f"{NewFolder}/{os.path.basename(img)}")
+            shutil.copy2(img, f"{NewFolder}")
             count += 1
-        print(f"Moved {count} files.")
+        print(f"Copied {count} files.")
 
 if __name__ == "__main__":
      
