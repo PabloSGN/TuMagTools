@@ -39,6 +39,9 @@ for i in range(5):
     Vlines.append(19 + 105 * i)
     Hlines.append(25 + 105 * i)
 
+tilt_of_lines = 8 # tilt of the edges of the micropols 
+
+
 Boxsize = 35 # Size of each MicroPol
 
 # =========================================================================== #
@@ -61,7 +64,7 @@ def extract_modulations(box, boxsize):
 
     return np.array(mpols)
 
-def extract_micropols(image, Vlines, Hlines, tilt_px = 8):
+def extract_micropols(image, Vlines, Hlines, tilt_px = tilt_of_lines):
 
     def tilt(x, tilt_px):
         return x * tilt_px/504 
@@ -118,7 +121,7 @@ def plot_configuration(Folder, selected_sets, polangle):
         return x * tilt_px/504 
 
     coords = []
-    tilt_px = 8
+    tilt_px = tilt_of_lines
     count = 0
     for i in range(4):
         for j in range(4):
