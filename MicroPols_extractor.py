@@ -96,7 +96,7 @@ def get_mean_value(polangle, sets, MP_sets):
     return np.mean(pols)
 
 
-def plot_configuration(Folder, selected_sets, polangle, Vlines, Hlines):
+def plot_configuration(Folder, selected_sets, polangle):
 
     imgs = sorted(glob.glob(os.path.join(Folder, "*img")))
 
