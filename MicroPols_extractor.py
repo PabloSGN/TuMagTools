@@ -3,7 +3,7 @@
 .. module:: utils
         :platform: Unix
         :synopsis: Module to analyze micropols observations. Refer to jupyter 
-        notebook for example of use. 
+        notebook : Long_cal_analysis.ipynb for example of use. 
 
         Command line execution : No command line execution.
 
