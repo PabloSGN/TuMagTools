@@ -78,7 +78,7 @@ def voltage_scan(Folder, xc1, yc1, rad):
     plt.title('Voltage Scan - ' + str(len(Intensity)) + ' Images' )
 
     plt.plot(Read_volts, Intensity, color = 'crimson', lw =3)
-    plt.scatter(Read_volts, Intensity, marker = 'k', c = 'w', s = 120)
+    plt.scatter(Read_volts, Intensity, marker = 'x', c = 'k', s = 120)
 
     plt.xticks(Read_volts)
 
