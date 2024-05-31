@@ -51,7 +51,7 @@ def voltage_scan(Folder, xc1, yc1, rad):
     print('rad', rad)
     print('Folder : ', Folder)
     
-    All_images = sorted(glob.glob(os.path.join(Folder, '*')))
+    All_images = sorted(glob.glob(os.path.join(Folder, '*_0_*')))
     
     Intensity = []
     Read_volts = []
