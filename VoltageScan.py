@@ -77,12 +77,12 @@ def voltage_scan(Folder, xc1, yc1, rad):
     plt.figure(figsize = (15, 10))
     plt.title('Voltage Scan - ' + str(len(Intensity)) + ' Images' )
 
-    plt.plot(Read_volts, Intensity, color = 'crimson', lw =3)
-    plt.scatter(Read_volts, Intensity, marker = 'x', c = 'k', s = 120)
+    plt.plot(Read_volts, Intensity / H["nAcc"], color = 'crimson', lw =3)
+    plt.scatter(Read_volts, Intensity / H["nAcc"], marker = 'x', c = 'k', s = 120)
 
     plt.xticks(Read_volts)
 
-    plt.ylabel('Intensity')
+    plt.ylabel('Intensity [per accumulation]')
     plt.xlabel('Voltage [V]')
 
     plt.grid(True, color = 'k', alpha = 0.2)
