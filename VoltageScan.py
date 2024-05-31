@@ -33,7 +33,7 @@ from utils import read_Tumag
  
 # ============================= CONFIG ====================================== #
 
-plt.style.use('dark_background')
+plt.style.use('default')
 
 # =========================================================================== #
 
@@ -77,15 +77,15 @@ def voltage_scan(Folder, xc1, yc1, rad):
     plt.figure(figsize = (15, 10))
     plt.title('Voltage Scan - ' + str(len(Intensity)) + ' Images' )
 
-    plt.plot(Read_volts, Intensity, color = 'gold', lw =2)
-    plt.scatter(Read_volts, Intensity, marker = 'x', c = 'w', s = 100)
+    plt.plot(Read_volts, Intensity, color = 'crimson', lw =3)
+    plt.scatter(Read_volts, Intensity, marker = 'k', c = 'w', s = 120)
 
     plt.xticks(Read_volts)
 
     plt.ylabel('Intensity')
     plt.xlabel('Voltage [V]')
 
-    plt.grid(True, color = 'w', alpha = 0.2)
+    plt.grid(True, color = 'k', alpha = 0.2)
     plt.xticks(rotation=60)
     plt.tight_layout()
     plt.show()
